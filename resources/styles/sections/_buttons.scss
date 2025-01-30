@@ -1,0 +1,17 @@
+@mixin black-button {
+  display: flex;
+  padding: 16px 50px;
+  justify-content: center;
+  align-items: center;
+  background: #272727;
+
+  text-decoration: none;
+  color: #fff;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 148%; /* 20.72px */
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}

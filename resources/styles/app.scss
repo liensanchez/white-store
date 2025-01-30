@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "sections/header";  
+@import "sections/buttons";
+@import "sections/footer";  
+@import "partials/sale";  
+@import "partials/phones"; 
+@import "partials/latest-posts"; 
+@import "pages/home";  
+
+.custom-container {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1920px;
+}
