@@ -7,9 +7,7 @@ import $ from 'jquery';
 domReady(async () => {
   // ...
   const homeSwiper = new Swiper('.hero-swiper', {
-    // Optional parameters
     loop: true,
-    // Navigation arrows
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -21,16 +19,50 @@ domReady(async () => {
     loop: true,
     slidesPerView: 4,
     spaceBetween: 20,
+    pagination: {
+      clickable: true,
+      el: ".swiper-pagination",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+    },
   });
-
 
   const latestPostsSwiper = new Swiper('.latest-post-swiper', {
     // Optional parameters
     loop: true,
     slidesPerView: 3,
     spaceBetween: 20,
+    pagination: {
+      clickable: true,
+      el: ".swiper-pagination",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
   });
 
+  $('.mobile-option-open').on('click', function () {
+    $('.right-navbar').toggleClass('mobile-open');
+});
 
   $('.menu-item-has-children').on('click', function () {
       $(this).find('.sub-menu').toggleClass('sub-menu-open');

@@ -19,7 +19,6 @@
 
             <a href="{{home_url('/shop')}}">Go to Shop</a>
         </div>
-
         
         <div class="mobile-product-swiper swiper">
             <div class="swiper-wrapper">
@@ -42,6 +41,7 @@
                 @endwhile
                 @php wp_reset_postdata(); @endphp
             </div>
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 @else

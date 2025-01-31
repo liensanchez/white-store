@@ -35,6 +35,7 @@
                 @endwhile
                 @php wp_reset_postdata(); @endphp
             </div>
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 @else

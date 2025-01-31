@@ -1,5 +1,5 @@
 <section class="sale-cta">
-    <div>
+    <div class="left-cta">
         <p>10% off</p>
         <h3>New year sale</h3>
         <a href="">Shop sale</a>
