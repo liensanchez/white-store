@@ -15,7 +15,7 @@
 @if ($products_mobile->have_posts())
     <section class="mobile-phones custom-container">
         <div class="mobile-top">
-            <h2>Phones</h2>
+            <h2>Latest Phones</h2>
 
             <a href="{{home_url('/shop')}}">Go to Shop</a>
         </div>

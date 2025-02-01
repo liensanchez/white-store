@@ -8,6 +8,10 @@ domReady(async () => {
   // ...
   const homeSwiper = new Swiper('.hero-swiper', {
     loop: true,
+    autoplay: {
+      delay: 3000, // Change slide every 3 seconds
+      disableOnInteraction: false, // Keeps autoplay running even after user interaction
+    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',

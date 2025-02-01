@@ -10,5 +10,6 @@
   @include('partials.mobile-products')
   @include('partials.consoles-products')
   @include('partials.sale')
+  @include('components.newsletter')
   @include('partials.latest-blogs')
 @endsection
