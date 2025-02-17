@@ -63,3 +63,49 @@ collect(['setup', 'filters'])
             );
         }
     });
+
+function custom_products_per_page($query) {
+    if (!is_admin() && $query->is_main_query() && is_post_type_archive('product')) {
+        $query->set('posts_per_page', 9); // Set products per page to 9
+    }
+}
+add_action('pre_get_posts', 'custom_products_per_page');
+
+add_action('woocommerce_product_query', 'custom_product_sorting');
+function custom_product_sorting($query) {
+    if (!is_admin() && $query->is_main_query() && is_post_type_archive('product')) {
+        // Get the sorting parameter from the URL
+        $orderby = isset($_GET['orderby']) ? sanitize_text_field($_GET['orderby']) : 'menu_order';
+
+        switch ($orderby) {
+            case 'popularity':
+                $query->set('meta_key', 'total_sales');
+                $query->set('orderby', 'meta_value_num');
+                $query->set('order', 'DESC');
+                break;
+            case 'rating':
+                $query->set('meta_key', '_wc_average_rating');
+                $query->set('orderby', 'meta_value_num');
+                $query->set('order', 'DESC');
+                break;
+            case 'date':
+                $query->set('orderby', 'date');
+                $query->set('order', 'DESC');
+                break;
+            case 'price':
+                $query->set('meta_key', '_price');
+                $query->set('orderby', 'meta_value_num');
+                $query->set('order', 'ASC');
+                break;
+            case 'price-desc':
+                $query->set('meta_key', '_price');
+                $query->set('orderby', 'meta_value_num');
+                $query->set('order', 'DESC');
+                break;
+            default:
+                $query->set('orderby', 'menu_order');
+                $query->set('order', 'ASC');
+                break;
+        }
+    }
+}

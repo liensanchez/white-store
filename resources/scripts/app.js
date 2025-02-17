@@ -25,7 +25,7 @@ domReady(async () => {
     spaceBetween: 20,
     pagination: {
       clickable: true,
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
     },
     breakpoints: {
       0: {
@@ -50,7 +50,7 @@ domReady(async () => {
     spaceBetween: 20,
     pagination: {
       clickable: true,
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
     },
     breakpoints: {
       0: {
@@ -66,12 +66,57 @@ domReady(async () => {
 
   $('.mobile-option-open').on('click', function () {
     $('.right-navbar').toggleClass('mobile-open');
-});
-
-  $('.menu-item-has-children').on('click', function () {
-      $(this).find('.sub-menu').toggleClass('sub-menu-open');
   });
 
+  $('.menu-item-has-children').on('click', function () {
+    $(this).find('.sub-menu').toggleClass('sub-menu-open');
+  });
+
+  $('.filters-mobile').on('click', function () {
+    console.log('Here we are');
+    $('.lateral-bar-products').toggleClass('lateral-bar-products-open');
+  });
+
+  /* Add/Reduce uttons */
+  document.addEventListener('DOMContentLoaded', function () {
+    // Quantity increment and decrement
+    document
+      .querySelector('.minus-button')
+      .addEventListener('click', function () {
+        const quantityInput = document.querySelector(
+          '.quantity-wrapper input.qty'
+        );
+        let currentValue = parseInt(quantityInput.value);
+        if (currentValue > 1) {
+          quantityInput.value = currentValue - 1;
+        }
+      });
+
+    document
+      .querySelector('.add-button')
+      .addEventListener('click', function () {
+        const quantityInput = document.querySelector(
+          '.quantity-wrapper input.qty'
+        );
+        let currentValue = parseInt(quantityInput.value);
+        const maxValue =
+          parseInt(quantityInput.getAttribute('max')) || Infinity;
+        if (currentValue < maxValue) {
+          quantityInput.value = currentValue + 1;
+        }
+      });
+
+    // Buy Now button redirect
+    document
+      .querySelector('.buy_now_button')
+      .addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector('input[name="add-to-cart"]').value = this.value;
+        document.querySelector('form.cart').action =
+          '{{ wc_get_checkout_url() }}';
+        document.querySelector('form.cart').submit();
+      });
+  });
 });
 
 /**

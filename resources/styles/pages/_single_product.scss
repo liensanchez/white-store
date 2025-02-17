@@ -1,0 +1,39 @@
+.single-product-container {
+  padding: 120px 0;
+
+  .single-product {
+    display: flex;
+    gap: 50px;
+
+    .product-images {
+      width: 50%;
+    }
+
+    .product-details {
+      .product-title {
+        color: rgb(39, 39, 39);
+        font-family: Jost;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 114%;
+        letter-spacing: 6%;
+        text-align: left;
+        text-transform: uppercase;
+      }
+
+      .product-price {
+        color: rgb(114, 174, 200) !important;
+        font-family: Lato !important;
+        font-size: 40px !important;
+        font-weight: 500 !important;
+        line-height: 48px !important;
+        letter-spacing: 0% !important;
+        text-align: left !important;
+      }
+    }
+  }
+
+  body .single_add_to_cart_button {
+    @include black-button;
+  }
+}

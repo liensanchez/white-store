@@ -1,0 +1,22 @@
+.search-form {
+  display: flex;
+  box-sizing: border-box;
+  border: 1px solid rgb(238, 238, 238);
+  box-shadow: 0px 0px 44px 0px rgba(0, 0, 0, 0.08);
+  background: rgb(255, 255, 255);
+  
+  input {
+    padding: 10px 0px 10px 30px;
+    height: 100%;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+
+  button {
+    @include black-button;
+    padding: 16px 20px;
+  }
+}

@@ -8,8 +8,12 @@
 @import "partials/sale";  
 @import "partials/phones"; 
 @import "partials/latest-posts"; 
-@import "pages/home";  
 @import "components/newsletter";
+@import "components/text-hero";
+@import "components/search";
+@import "pages/home";  
+@import "pages/shop";  
+@import "pages/single_product";  
 
 .custom-container {
     margin: 0 auto;
